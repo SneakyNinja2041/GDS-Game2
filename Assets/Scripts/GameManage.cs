@@ -5,11 +5,23 @@ using UnityEngine;
 public class GameManage : MonoBehaviour
 {
     public GameObject player;
+    CameraMovement camMove;
 
+    
+
+    void Awake()
+    {
+        camMove = player.GetComponent<CameraMovement>();
+       
+    }
+
+
+  
 
     public void RoundStart()
-    {
-        //isBoating = false;  get reference to bool / the player inv from game 1
+    {      
+        camMove.isBoating = false;
         player.transform.position = new Vector3(0, 0, 0);
+        
     }
 }

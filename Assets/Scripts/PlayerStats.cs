@@ -6,19 +6,19 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-    public static int Money;
+    public static int money;
     public int startMoney = 0;
 
     public TextMeshProUGUI moneyText;
 
     void Start()
     {
-        Money = startMoney;
+        money = startMoney;
     }
 
     void Update()
     {
-        moneyText.text = "MONEY: $" + Money.ToString();
+        moneyText.text = "MONEY: $" + money.ToString();
     }
 
 }

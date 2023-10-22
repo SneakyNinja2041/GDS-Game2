@@ -175,3 +175,4 @@ MonoBehaviour:
   inventory: 0
   startInventory: 0
   inventoryFull: 0
+  inventoryText: {fileID: 2386570828387505253, guid: 87a9e6f2f7a385a42abcd7bdcd756d7d, type: 3}

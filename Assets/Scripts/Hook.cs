@@ -7,20 +7,21 @@ using UnityEngine.UI;
 public class Hook : MonoBehaviour
 {
     public int maxFish = 2;
-    public int inventory = 0;
-    public int startInventory = 0;
+    private static int inventory = 0;
+    
 
     public bool inventoryFull = false;
 
     private BoxCollider2D hookCollider;
+ 
 
     public TextMeshProUGUI inventoryText;
 
+    
 
     void Start()
     {
         hookCollider = GetComponent<BoxCollider2D>();
-        inventory = startInventory;
     }
 
     void Update()
@@ -28,7 +29,13 @@ public class Hook : MonoBehaviour
         if (inventory == maxFish)
         {
             inventoryFull = true;
-            hookCollider.enabled = false;   
+            hookCollider.enabled = false;
+            
+        }
+        else
+        {
+            inventoryFull = false;
+            hookCollider.enabled = true;
         }
 
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -47,6 +54,12 @@ public class Hook : MonoBehaviour
                 inventory++;
             }
         }
+    }
+
+    public void ResetInventory()
+    {
+        inventory = 0;
+        Debug.Log("Inventory Reset");
     }
 
 }
